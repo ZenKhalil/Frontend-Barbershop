@@ -1,0 +1,252 @@
+/* Ensure that the HTML and body elements take up the full height and width */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #424242;
+}
+
+/* Header and Navigation Styles */
+header {
+  width: 100%; /* Full width */
+  background-color: #0275d8; /* Blue background for the entire header */
+}
+
+#main-nav {
+  max-width: 960px; /* Max width */
+  margin: 0 auto; /* Centering the nav */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Use flexbox for horizontal alignment */
+  justify-content: center; /* Center the items */
+  align-items: center; /* Center items vertically */
+}
+
+nav ul li {
+  padding: 10px 15px; /* Adjust as needed */
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Additional Styles */
+/* (Include the rest of your styles here, such as main, footer, buttons, etc.) */
+
+
+/* Calendar container styles */
+#calendar {
+  max-width: 1000px; /* Slightly larger */
+  margin: 40px auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* Time slot selection highlight */
+.fc-timegrid-slot.selected-slot {
+  background-color: #ffff99;
+}
+
+
+/* Service List Styles */
+.service {
+  background-color: white;
+  border: 1px solid #e0e0e0; /* Lighter border */
+  padding: 15px;
+  margin-bottom: 15px; /* Slightly more space between services */
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Admin Button Styles */
+button {
+  background-color: #5cb85c; /* Fresh green color */
+  color: white;
+  padding: 10px 15px;
+  border: none; /* Removed border */
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+button:hover {
+  background-color: #4cae4c; /* Darker green on hover */
+}
+
+/* Form Styles */
+select, input[type="text"], input[type="email"], input[type="tel"] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #bdbdbd; /* Lighter border for input fields */
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+/* Time Slot Styles for Unavailability */
+.unavailable {
+  background-color: #e0e0e0;
+  color: #757575;
+  cursor: not-allowed;
+  font-style: italic;
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #424242; /* Darker footer for contrast */
+  color: white;
+}
+
+/* Tooltip Style */
+#tooltip {
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 999;
+  display: none;
+}
+/* Base styles for the modal */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+}
+
+/* Show the modal when 'hidden' class is removed */
+.modal:not(.hidden) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal content box */
+.modal-content {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  width: 50%; /* Set a max-width for larger screens */
+  max-width: 500px; /* You can adjust this value */
+  position: relative;
+}
+
+/* Close button style */
+.close-modal {
+    cursor: pointer;
+    color: #aaa;
+    background: #3c0303;
+    border: none;
+    font-size: 1.5em;
+    position: absolute;
+    top: -5px;
+    right: 7px;
+}
+
+.close-modal:hover {
+  color: #333;
+}
+
+/* Form styles */
+#booking-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.service-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  align-items: center; /* Align items vertically */
+}
+
+.service-bubble {
+  background: #f2f2f2;
+  border-radius: 20px;
+  padding: 5px 15px; /* Reduced padding */
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s, color 0.3s;
+  display: inline-block; /* Make the bubble only as wide as its content */
+  margin: 5px 0; /* Add some margin top and bottom for spacing */
+  max-width: calc(100% - 10px); /* Prevent it from being too wide */
+  white-space: nowrap; /* Prevent the text from wrapping */
+  min-width: 80px; /* Adjust as needed */
+  text-align: center;
+}
+
+.service-bubble.selected {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Date and Time display */
+#selected-datetime p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Hide the actual radio button and checkbox inputs */
+.service-button input[type="radio"],
+.service-button input[type="checkbox"] {
+  display: none;
+}
+
+/* Highlight the selected service button */
+.service-button input[type="radio"]:checked + label,
+.service-button input[type="checkbox"]:checked + label {
+  background-color: #007bff; /* Blue background for selected service */
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    width: 95%;
+  }
+}

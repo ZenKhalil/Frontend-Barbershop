@@ -1,0 +1,12 @@
+{"scripts": {
+  "start": "parcel index.html",
+  "build": "parcel build index.html"
+},
+  "dependencies": {
+    "fullcalendar": "^6.1.10",
+    "node.js": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "parcel": "^2.10.3"
+  }
+}

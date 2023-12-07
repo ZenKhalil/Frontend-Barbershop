@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Responsive meta tag -->
+    <title>Barbershop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div id="admin-login-area">
+            <button id="admin-login-button">Admin Login</button>
+        </div>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="#home-section">Home</a></li>
+                <li><a href="#booking-section">Booking</a></li>
+                <li><a href="#pricelist-section">Price List</a></li>
+                <li><a href="#about-section">About Us</a></li>
+                <li><a href="#gallery-section">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="home-section">
+            <!-- Home content goes here -->
+        </section>
+        
+        <section id="booking-section">
+            <div id="calendar"></div>
+            <div class="booking-container">
+                <!-- Modal Structure -->
+                <div id="booking-modal" class="modal hidden">
+                    <div class="modal-content">
+                        <!-- Display selected date and time -->
+                        <div id="selected-datetime">
+                            <p id="selected-date"></p>
+                            <p id="selected-time"></p>
+                        </div>
+                        <form id="booking-form">
+                            <!-- Hidden fields for selected date and time -->
+                            <input type="hidden" id="hidden-date-field" name="booking_date">
+                            <input type="hidden" id="hidden-time-field" name="booking_time">
+                            <!-- Name input -->
+                            <div class="form-group">
+                                <label for="customer-name">Name:</label>
+                                <input type="text" id="customer-name" name="customer_name" required>
+                            </div>
+                            <!-- Email input -->
+                            <div class="form-group">
+                                <label for="customer-email">Email:</label>
+                                <input type="email" id="customer-email" name="customer_email" required>
+                            </div>
+                            <!-- Phone input -->
+                            <div class="form-group">
+                                <label for="customer-phone">Phone:</label>
+                                <input type="tel" id="customer-phone" name="customer_phone">
+                            </div>
+                            <!-- Main Service Bubbles -->
+                            <div class="form-group" id="main-service-options">
+                                <label>Main Service:</label>
+                                <div class="service-options" id="main-services-container">
+                                    <!-- Main service bubbles will be populated here -->
+                                </div>
+                            </div>
+                            <!-- Extra Service Bubbles -->
+                            <div class="form-group" id="extra-service-options">
+                                <label>Extra Services:</label>
+                                <div class="service-options" id="extra-services-container">
+                                    <!-- Extra services bubbles will be populated here -->
+                                </div>
+                            </div>
+                            <!-- Barber Select -->
+                            <div class="form-group">
+                                <label for="barber-select">Barber:</label>
+                                <select id="barber-select" name="barber_id" required>
+                                    <!-- Barber options will be populated by JavaScript -->
+                                </select>
+                            </div>
+                            <!-- Close Button -->
+                            <button class="close-modal" onclick="closeModal()">×</button>
+                            <button type="submit">Book Now</button>
+                        </form>
+                    </div>
+    </div>
+</div>
+</section>
+<section id="pricelist-section">
+    <!-- Price list integration goes here -->
+</section>
+
+<section id="about-section">
+    <!-- About us content goes here -->
+        </section>
+
+        <section id="gallery-section">
+            <!-- Gallery display and management goes here -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Modern Barbershop</p>
+    </footer>
+
+    <div id="tooltip" class="hidden"></div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
